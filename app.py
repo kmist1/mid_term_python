@@ -3,8 +3,10 @@ import json
 from Validators.string_is_float import isfloat
 from Validators.is_page_valid import is_page_valid
 from Validators.same_currency_validator import is_same
+from Decorators.run_time import time_take
 
 
+@time_take
 def currency_conversion(from_page,from_currency,to_currecny,amt):
     content = from_page.read().decode("utf-8")
     data = json.loads(content)
